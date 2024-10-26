@@ -1,5 +1,4 @@
 ## Project Overview
-
 **TalentForge** is an innovative platform designed specifically to empower job seekers navigating the complexities of today’s competitive job market. By leveraging cutting-edge algorithms and sophisticated natural language processing (NLP) techniques, TalentForge meticulously analyzes a wide array of job descriptions from various industries. This analysis goes beyond mere keyword extraction; the platform delves deep into the nuances of each posting to identify critical information that is vital for job applicants.
 
 Through this comprehensive analysis, TalentForge extracts key data points, such as the top five technical and non-technical skills sought by employers. It also highlights important qualifications, relevant experience, and specific competencies that are often emphasized in job listings. By doing so, the platform provides users with invaluable insights that allow them to understand employer expectations clearly.
@@ -7,9 +6,7 @@ Through this comprehensive analysis, TalentForge extracts key data points, such 
 This data-driven approach not only helps job seekers tailor their resumes and cover letters more effectively but also equips them with the knowledge to strategize their job search. Ultimately, TalentForge aims to enhance the overall job application experience, making it more efficient and effective for candidates seeking to secure their ideal positions.
 
 For a visual demonstration of the platform, please watch the following video:
-https://github.com/user-attachments/assets/a241cbd8-305f-4311-9ba9-7a84af2c75db
-
-
+https://github.com/user-attachments/assets/d6449690-21d9-4c44-b644-2d86947c60fe
 
 
 ### Key Features
