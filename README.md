@@ -6,12 +6,11 @@ Through this comprehensive analysis, TalentForge extracts key data points, such 
 
 This data-driven approach not only helps job seekers tailor their resumes and cover letters more effectively but also equips them with the knowledge to strategize their job search. Ultimately, TalentForge aims to enhance the overall job application experience, making it more efficient and effective for candidates seeking to secure their ideal positions.
 
-
-[Demo](Demo.mp4)
+For a visual demonstration of the platform, please watch the following video:
+[Demo](Demo.mp4).
 
 
 ### Key Features
-
 - **Skill Identification:**  
   TalentForge utilizes advanced algorithms to automatically analyze job descriptions, extracting the top five technical and non-technical skills required for each position. This feature is not limited to basic keyword extraction; it involves a comprehensive understanding of the context in which these skills are mentioned. By identifying essential qualifications, candidates gain insight into the specific competencies that employers value most, such as programming languages for tech roles or communication skills for customer-facing positions. This clarity allows candidates to focus on showcasing their most relevant experiences and abilities, making their applications more compelling.
 
