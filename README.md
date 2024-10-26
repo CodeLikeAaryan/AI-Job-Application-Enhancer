@@ -6,7 +6,7 @@ Through this comprehensive analysis, TalentForge extracts key data points, such 
 This data-driven approach not only helps job seekers tailor their resumes and cover letters more effectively but also equips them with the knowledge to strategize their job search. Ultimately, TalentForge aims to enhance the overall job application experience, making it more efficient and effective for candidates seeking to secure their ideal positions.
 
 For a visual demonstration of the platform, please watch the following video:
-https://github.com/user-attachments/assets/d6449690-21d9-4c44-b644-2d86947c60fe
+https://github.com/user-attachments/assets/547ff0f5-0781-444a-b568-3ead264a7342
 
 
 ### Key Features
