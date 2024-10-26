@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Description Insights Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style>
+        /* Styling for the form and results */
+        body {
+            background: linear-gradient(135deg, #d807c7, #410663, #6d044a);
+            padding: 40px;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #070707;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2d3748;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        textarea, input[type="text"] {
+            width: 100%;
+            /* padding: 12px; */
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #4a5568;
+            background-color: #f7fafc;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+        }
+        button.submit-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #02021f, #860375); /* Dark blue gradient for contrast */
+    color: white;
+    padding: 12px 12px;
+    border: none;
+    border-radius: 0px; /* Rectangular shape */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase; /* Makes the text uppercase for a bold look */
+}
+
+button.submit-btn:hover {
+    background: linear-gradient(90deg, #050518, #5a0447); /* Reversed gradient on hover */
+    transform: translateY(-3px); /* Subtle lift effect */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* Slightly larger shadow */
+}
+
+button.submit-btn:active {
+    background: linear-gradient(90deg, #09091d, #790247); /* Keeps the gradient */
+    transform: translateY(1px); /* Pressed down effect */
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}
+
+
+
+        .collapsible {
+            background: linear-gradient(105deg, #6a0572, #f5077e);
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 1.25rem;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .collapsible.active {
+            background-color: #57025c;
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            color: white;
+            font-weight: bold;
+            float: right;
+        }
+
+        .collapsible.active:after {
+            content: "\2212";
+        }
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+        }
+
+        .collapsible.active + .content {
+            opacity: 1;
+            padding: 15px 18px;
+            max-height: 600px; /* Increase max-height to accommodate content */
+        }
+
+        .results-section {
+            margin-top: 10px;
+        }
+
+        .result-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <section style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; background: linear-gradient(135deg, #6e057f, #2a0135); border-radius: 12px; padding: 30px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); position: relative;">
+        <!-- Logo positioned in the top left -->
+        <div style="position: absolute; top: 15px; left: 20px;">
+            <h2 style="font-size: 1.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); font-family: 'Bebas Neue', sans-serif;">
+                <span style="color: #fa1515;">Talent</span><span style="color: #ffffff;">Forge</span>
+            </h2>
+            
+            
+            
+        </div>
+    
+        <div style="flex: 1; padding: 20px; padding-top: 60px;">
+            <!-- Quote added to the heading -->
+            <h2 style="font-size: 2.5rem; font-weight: 600; color: #ffffff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                Empower Resume ATS
+            </h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #e0e0e0; margin-bottom: 15px; text-align: justify; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">
+                Our tool <span style="color: #ffd700;">extracts relevant skills</span>, <span style="color: #ffd700;">creates profile summaries</span>, and provides <span style="color: #ffd700;">project ideas and referral templates</span> based on job descriptions, offering quick and precise insights.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #e0e0e0; margin-bottom: 15px; text-align: justify; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">
+                Perfect for <span style="color: #ffd700;">job seekers</span> enhancing resumes and <span style="color: #ffd700;">recruiters</span> needing efficient analysis, delivering tailored, accurate results swiftly.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #e0e0e0; text-align: justify; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">
+                <span style="color: #ffd700;">Boost your professional journey</span> with actionable insights and <span style="color: #ffd700;">data-driven recommendations</span> for a competitive edge.
+            </p>
+        </div>
+        
+        <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+            <img src="static/jobs.png" alt="Job Description Insights Tool" style="max-width: 600px; height: auto; border-radius: 10px; box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);">
+        </div>
+    </section>
+    
+    
+    <section style="margin-bottom: 30px; padding: 20px; background-color: rgba(255, 255, 255, 0.1); border-radius: 8px; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);">
+        <h2 style="font-size: 2.5rem; font-weight: 600; color: #ffffff; text-align: center; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+            About TalentForge
+        </h2>
+        <p style="font-size: 1.2rem; line-height: 1.8; color: #f0f0f0; text-align: justify; margin-bottom: 20px;">
+            "TalentForge" is a cutting-edge tool designed to streamline the job application and recruitment process by providing customized insights and resources based on job descriptions. The tool allows users to input job descriptions, and from there, it generates a comprehensive set of resources that include relevant skills, tailored profile summaries, and potential project ideas. In addition, it provides personalized referral templates for LinkedIn and email communication, ensuring users present themselves effectively to recruiters.
+        </p>
+        <p style="font-size: 1.2rem; line-height: 1.8; color: #f0f0f0; text-align: justify;">
+            Whether you are a job seeker aiming to optimize your resume or a recruiter seeking to understand role-specific requirements, TalentForge offers precise and actionable insights that save time and enhance accuracy. With its user-friendly interface and data-driven approach, the tool empowers users to stay competitive in the job market by maximizing their professional potential. TalentForge's dynamic features ensure a personalized and efficient experience, providing an essential edge in today's fast-paced hiring landscape.
+        </p>
+    </section>
+    
+    <!-- New Heading: Explore Tool -->
+    <h2 style="font-size: 3rem; font-weight: 700; color: #ffffff; text-align: center; margin: 40px 0; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); ">
+        Explore Tool
+    </h2>
+    
+    <div class="container">
+        <h1>RESUME GENIUS</h1>
+    
+        <!-- Job Description Form -->
+        <form id="jobForm" method="POST">
+            <label>Enter Job Description</label>
+            <textarea name="job_description" rows="5" id="job_description" placeholder="Enter Job Description Here..." required></textarea>
+            
+            <!-- Collapsible Bar for "Extract Relevant Skills" -->
+            <button class="collapsible" type="button">Extract Relevant Skills</button>
+            <div class="content">
+                <p>Top Required Skills Based On Job Description</p>
+                <button type="button" class="submit-btn" data-option="Extract Relevant Skills" onclick="toggleCard(this)">Show Results</button>
+                <div id="results_extract_relevant_skills" class="results-section"></div> <!-- Section to display the results -->
+            </div>
+    
+            <!-- Collapsible Bar for "Profile Summary" -->
+            <button class="collapsible" type="button">Profile Summary</button>
+            <div class="content">
+                <p>Profile Summary Based On Job Description</p>
+                <button type="button" class="submit-btn" data-option="Profile Summary" onclick="toggleCard(this)">Show Results</button>
+                <div id="results_profile_summary" class="results-section"></div> <!-- Section to display the results -->
+            </div>
+    
+            <!-- Collapsible Bar for "Project Ideas" -->
+            <button class="collapsible" type="button">Project Ideas Based on Job Description</button>
+            <div class="content">
+                <p>Relevant Project Ideas Based On Job Description</p>
+                <button type="button" class="submit-btn" data-option="Project Ideas Based On Job Description" onclick="toggleCard(this)">Show Results</button>
+                <div id="results_project_ideas_based_on_job_description" class="results-section"></div> <!-- Section to display the results -->
+            </div>
+    
+            <!-- Collapsible Bar for "Referral Template" -->
+            <button class="collapsible" type="button">Referral Template For LinkedIn and Email</button>
+            <div class="content">
+                <p>Enter Recruiter\Referrer details to generate referral templates for LinkedIn and email.</p>
+                <label>Recruiter's Name</label>
+                <input type="text" name="recruiter_name" placeholder="Enter Referrer's Name" style="padding-top: 12px;padding-bottom: 12px;padding-left: 13px;">
+                <label>Role</label>
+                <input type="text" name="role" placeholder="Enter the Role" style="padding-top: 12px;padding-bottom: 12px;padding-left: 13px;">
+                <label>Company Name</label>
+                <input type="text" name="company_name" placeholder="Enter the Company Name" style="padding-top: 12px;padding-bottom: 12px;padding-left: 13px;"> 
+                <label>Job Link</label>
+                <input type="text" name="job_link" placeholder="Enter the Job Link" style="padding-top: 12px;padding-bottom: 12px;padding-left: 13px;">
+                <button type="button" class="submit-btn" data-option="Referral Template For Linkedin And Email" onclick="toggleCard(this)">Show Results</button>
+                <div id="results_referral_template_for_linkedin_and_email" class="results-section"></div> <!-- Section to display the results -->
+            </div>
+        </form>
+    </div>
+    
+
+    <!-- JavaScript to handle AJAX form submission and card expansion -->
+    <script>
+        // Collapsible sections for the buttons
+        var coll = document.getElementsByClassName("collapsible");
+        for (let i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    
+        // Function to handle the form submission via AJAX and expand card with results
+        function toggleCard(button) {
+            const option = button.getAttribute('data-option');
+            const resultSectionId = 'results_' + option.toLowerCase().replace(/\s+/g, '_');
+            submitForm(option, resultSectionId);
+        }
+    
+        // Function to submit the form and fetch the result from Flask
+        function submitForm(option, resultSectionId) {
+            const form = document.getElementById('jobForm');
+            const formData = new FormData(form);
+            formData.append('option', option); // Append the selected option (e.g., 'Extract Relevant Skills')
+    
+            // Send the form data via AJAX to the Flask server
+            fetch('/get_result', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Insert the returned result into the correct result section
+                const resultSection = document.getElementById(resultSectionId);
+                resultSection.innerHTML = '<div class="result-box">' + data.result + '</div>';
+    
+                // Expand the card smoothly when the result is inserted
+                const contentDiv = resultSection.closest('.content');
+                contentDiv.style.maxHeight = contentDiv.scrollHeight + "px";
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    
+        // Automatically expand the content when the "Show Results" button is clicked
+        document.querySelectorAll('.submit-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                toggleCard(this);
+            });
+        });
+
+   // Function to copy profile summary to clipboard without including the "Copy" button
+   function copyToClipboard(event, text) {
+    event.stopPropagation(); // Prevent triggering the collapsible action
+    navigator.clipboard.writeText(text).then(() => {
+        console.log('Copied to clipboard');
+        // Optionally notify the user, e.g. via an alert or notification
+    }, (err) => {
+        console.error('Could not copy text: ', err);
+    });
+}
+
+    </script>
+    
+</body>
+</html>
